@@ -45,7 +45,7 @@ class Item:
 
 class Order:
 
-    line_len = 32
+    line_len = 30
 
     def __init__(self):
 
@@ -105,31 +105,34 @@ class Order:
         #print Subtotal
         dots_line = "." * (self.line_len - len("Subtotal"))
         sub_total_price = "   ${:6.2f}".format(float(self.get_total_price()))
-        print("Sutotal" + dots_line + sub_total_price)
+        print("Sutotal " + dots_line + sub_total_price)
 
         #print Tax
 
         dots_line = "." * (self.line_len - len("Tax XST"))
         total_gst = "   ${:5.2f}".format(float(self.get_gst()))
         total_qst = "   ${:5.2f}".format(float(self.get_qst()))
-        print("Tax GST" + dots_line + total_gst)
-        print("Tax QST" + dots_line + total_qst)
+        print("Tax GST " + dots_line + total_gst)
+        print("Tax QST " + dots_line + total_qst)
 
         #print total price
         dots_line = "." * (self.line_len - len("Total"))
         total_price = "   ${:5.2f}".format(float(self.get_total_price()+self.get_gst()+self.get_qst()))
-        print("TOTAL" + dots_line + total_price)
+        print("TOTAL " + dots_line + total_price)
 
 
-
+#Test
 order = Order()
 i=0
+price = 1
 while i<=6:
-    new_item = Item("1245", "wert", 12, True)
+    new_item = Item("1245", "wert", price, True)
     order.add_item(new_item)
     i+=1
+    price+=2
 order.print_order()
 
+#Menu
 # while True:
 #
 #     item_sku = input("What is the item sku? >")
