@@ -72,6 +72,18 @@ class Order:
             total_price += current_item.get_item_base_price()
         return total_price
 
+    def get_gst(self):
+        gst = 0
+        for current_item in self.__item_list:
+            gst += current_item.get_item_tax_gst()
+        return gst
+
+    def get_qst(self):
+        qst = 0
+        for current_item in self.__item_list:
+            qst += current_item.get_item_tax_qst()
+        return qst
+
     def print_order(self):
         dtime = '{:%Y-%m-%d %I:%M %p}'.format(datetime.datetime.now())
         #print('{:>16}'.format(str(dtime)))
@@ -82,7 +94,7 @@ class Order:
         print()
 
         price = '{:>35}'.format('Price')
-        tax =  '{:>16}'.format('Taxable')
+        tax = '{:>16}'.format('Taxable')
         print("Item"+price+tax)
 
         for current_item in self.__item_list:
@@ -95,23 +107,17 @@ class Order:
         sub_total_price = "   ${:6.2f}".format(float(self.get_total_price()))
         print("Sutotal" + dots_line + sub_total_price)
 
-
         #print Tax
-        gst = 0
-        for current_item in self.__item_list:
-            gst += current_item.get_item_tax_gst()
-        qst = 0
-        for current_item in self.__item_list:
-            qst += current_item.get_item_tax_qst()
+
         dots_line = "." * (self.line_len - len("Tax XST"))
-        total_gst = "   ${:5.2f}".format(float(gst))
-        total_qst = "   ${:5.2f}".format(float(qst))
+        total_gst = "   ${:5.2f}".format(float(self.get_gst()))
+        total_qst = "   ${:5.2f}".format(float(self.get_qst()))
         print("Tax GST" + dots_line + total_gst)
         print("Tax QST" + dots_line + total_qst)
 
         #print total price
         dots_line = "." * (self.line_len - len("Total"))
-        total_price = "   ${:5.2f}".format(float(self.get_total_price()+gst+qst))
+        total_price = "   ${:5.2f}".format(float(self.get_total_price()+self.get_gst()+self.get_qst()))
         print("TOTAL" + dots_line + total_price)
 
 
