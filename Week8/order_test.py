@@ -16,8 +16,15 @@ for item in item_list:
     new_item = Item(item[0], item[1], item[2], item[3])
     order.add_item(new_item)
 
-order.generate_receipt(30)
+width = 40
+
+order.generate_receipt(width)
 
 #Test remove
+print()
+print("*"*(width+10))
+print()
+print("Item removed")
+print()
 order.remove_item("1236")
-order.generate_receipt(30)
+order.generate_receipt(width)

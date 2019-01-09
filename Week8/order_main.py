@@ -1,3 +1,8 @@
+#Python Lab
+#Creating a Basic Order System using Object Oriented Techniques
+# Group Nian & Ka Yan
+
+
 from order_class_v2 import Order
 from item_class_v2 import Item
 
@@ -20,4 +25,4 @@ while True:
     if input("Enter another Item (y/n)? >").lower() == "n":
         break
 
-order.generate_receipt(30)
+order.generate_receipt(40)

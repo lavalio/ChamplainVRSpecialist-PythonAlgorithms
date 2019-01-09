@@ -15,19 +15,20 @@ def convert_bool(string):
         li[3] = True
     return li
 
-order = Order()
-filename = 'items.txt'
-with open(filename) as file_object:
-     for line in file_object:
-         #print(line)
-         item = convert_bool(line)
-         #print(item)
+def make_an_order():
+    order = Order()
+    filename = 'items.txt'
+    with open(filename) as file_object:
+        for line in file_object:
+            item = convert_bool(line)
+            new_item = Item(item[0], item[1], float(item[2]), item[3])
+            order.add_item(new_item)
+    order.generate_receipt(36)
+    print()
+    print()
 
-         new_item = Item(item[0], item[1], float(item[2]), item[3])
-         order.add_item(new_item)
+i=0
+while i<3:
+    make_an_order()
+    i+=1
 
-order.generate_receipt(30)
-
-#Test remove
-#order.remove_item("1236")
-#order.generate_receipt(30)
