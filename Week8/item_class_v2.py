@@ -14,6 +14,12 @@ class Item:
 
     def is_taxable(self):
         if (self.__taxable == True):
+            return True
+        else:
+            return False
+
+    def taxable_letter(self):
+        if (self.is_taxable()):
             return "T"
         else:
             return ""
@@ -48,4 +54,4 @@ class Item:
         #item_line = self.name + " "+dot+price+tax_c
         #print(item_line)
 
-        print(self.get_name(),dots,price,self.is_taxable())
+        print(self.get_name(),dots,price,self.taxable_letter())

@@ -51,7 +51,6 @@ class Order:
         return qst
 
     def print_items(self,width):
-
         for current_item in self.__item_list:
             current_item.print_item(width)
 
@@ -72,21 +71,23 @@ class Order:
         #print Subtotal
         dots_line = "." * (width - len("Subtotal"))
         sub_total_price = "${:0.2f}".format(float(self.get_total_price()))
-        print("{} {} {:<5} ".format('Sutotal ', dots_line, sub_total_price))
+        #print("{} {} {:<5} ".format('Sutotal ', dots_line, sub_total_price))
+        print('Sutotal ', dots_line, sub_total_price)
 
         #print Tax
-
         dots_line = "." * (width - len("Tax XST"))
         total_gst = "${:0.2f}".format(float(self.get_total_gst()))
         total_qst = "${:0.2f}".format(float(self.get_total_qst()))
         #print("Tax GST " + dots_line + total_gst)
         #print("Tax QST " + dots_line + total_qst)
-        print("{} {} {:<5} ".format('Tax GST ', dots_line, total_gst))
-        print("{} {} {:<5} ".format('Tax QST ', dots_line, total_qst))
+        #print("{} {} {:<5} ".format('Tax GST ', dots_line, total_gst))
+        print('Tax GST ', dots_line, total_gst)
+        #print("{} {} {:<5} ".format('Tax QST ', dots_line, total_qst))
+        print('Tax QST ', dots_line, total_qst)
 
 
         #print total price
         dots_line = "." * (width - len("Total"))
         total=self.get_total_price() + self.get_total_gst() + self.get_total_qst()
         total_price = "${:0.2f}".format(float(total))
-        print("{} {} {:<5} ".format('TOTAL ', dots_line, total_price))
+        print('TOTAL ', dots_line, total_price)
