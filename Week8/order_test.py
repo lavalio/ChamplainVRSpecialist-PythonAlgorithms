@@ -24,7 +24,10 @@ order.generate_receipt(width)
 print()
 print("*"*(width+10))
 print()
-print("Item removed")
 print()
-order.remove_item("1236")
+sku = "1236"
+if order.remove_item(sku):
+    print("Item {} removed: " .format(sku))
+else:
+    print("Item {} is not exist.".format(sku) )
 order.generate_receipt(width)

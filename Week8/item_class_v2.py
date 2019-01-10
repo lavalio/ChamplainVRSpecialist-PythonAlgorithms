@@ -3,7 +3,7 @@ class Item:
 
     def __init__(self,sku,name,price:float,taxable):
         self.__sku = sku
-        self.name = name
+        self.__name = name
         self.__price = price
         self.__taxable = taxable
 
@@ -17,7 +17,7 @@ class Item:
         return self.__sku
 
     def get_name(self):
-        return self.name
+        return self.__name
 
     def get_price(self):
         return self.__price
@@ -42,11 +42,11 @@ class Item:
 
     def print_item(self,width):
         price = self.get_price()
-        dots = "."*(width-len(self.name))
+        dots = "."*(width-len(self.get_name()))
         #price = "   ${:6.2f}".format(float(price))
         price = "${:0.2f}".format(price)
         #tax_c =  '{:>11}'.format(self.get_taxable_character())
         #item_line = self.name + " "+dot+price+tax_c
         #print(item_line)
 
-        print("{} {} {} {} ".format(self.name,dots,price,self.is_taxable()))
+        print("{} {} {} {} ".format(self.get_name(),dots,price,self.is_taxable()))
