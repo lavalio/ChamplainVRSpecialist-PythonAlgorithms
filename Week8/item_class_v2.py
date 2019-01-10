@@ -48,4 +48,4 @@ class Item:
         #item_line = self.name + " "+dot+price+tax_c
         #print(item_line)
 
-        print("{} {} {} {} ".format(self.get_name(),dots,price,self.is_taxable()))
+        print(self.get_name(),dots,price,self.is_taxable())

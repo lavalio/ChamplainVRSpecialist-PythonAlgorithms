@@ -1,3 +1,7 @@
+#Python Lab
+#Creating a Basic Order System using Object Oriented Techniques
+# Group Nian & Ka Yan
+
 from order_class_v2 import Order
 from item_class_v2 import Item
 
