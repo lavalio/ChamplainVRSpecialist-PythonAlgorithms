@@ -1,14 +1,14 @@
 from order_class_v2 import Order
 from item_class_v2 import Item
 
-# Convert string to list
-
-def convert(string):
+# Convert a string to a list
+def convert_to_list(string):
 	li = list(string.strip().split(","))
 	return li
 
+#conver a string in the list to a boolean
 def convert_bool(string):
-    li=convert(string)
+    li=convert_to_list(string)
     if li[3] == "False":
         li[3] = False
     else:

@@ -1,5 +1,10 @@
+#Python Lab
+#Creating a Basic Order System using Object Oriented Techniques
+# Group Nian & Ka Yan
+
+
 class Item:
-    line_len =30
+    """here defined a Item class"""
 
     def __init__(self,sku,name,price:float,taxable):
         self.__sku = sku
@@ -33,12 +38,6 @@ class Item:
             return self.__price*0.09975
         else:
             return 0
-
-    def get_taxable_character(self):
-        if self.__taxable==True:
-            return "T"
-        #else:
-         #   return "F"
 
     def print_item(self,width):
         price = self.get_price()

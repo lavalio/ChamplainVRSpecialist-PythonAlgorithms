@@ -1,12 +1,20 @@
+#Python Lab
+#Creating a Basic Order System using Object Oriented Techniques
+# Group Nian & Ka Yan
+
+
 import datetime
 from item_class_v2 import Item
 
 class Order:
 
+    """here defined an Order class"""
+
     last_serial_used = 0
 
     def __init__(self):
         self.__item_list = []
+        self.__purchase_date=datetime.datetime.now()
         self.__order_number = Order.last_serial_used + 1
         Order.last_serial_used = self.__order_number
 
@@ -52,7 +60,7 @@ class Order:
         order_no ="{:06d}".format(self.__order_number)
         print("{} {:>24}".format("Order Number :", order_no) )
         #print("Item Number : {:>10}".format(self.get_item_count()))
-        dtime = '{:%Y-%m-%d %I:%M %p}'.format(datetime.datetime.now())
+        dtime = '{:%Y-%m-%d %I:%M %p}'.format(self.__purchase_date)
         print("Order Date: {:>40}".format(dtime))
         print()
         print("{} {:>38} ".format('Item','Price'))

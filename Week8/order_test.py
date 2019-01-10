@@ -1,6 +1,9 @@
 from order_class_v2 import Order
 from item_class_v2 import Item
 
+# Testing program
+# Test data are from a list
+
 item_list = [["1234","Bread",2.79,False],
              ["1235","Milk",4.99,False],
              ["1236","Chips",1.79,True],
