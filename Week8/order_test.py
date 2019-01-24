@@ -13,7 +13,7 @@ item_list = [["1234","Bread",2.79,False],
              ["1236","Chips",1.79,True],
              ["1237","Butter",11.09,True],
              ["1238","Potato", 2.29, True],
-             ["1239","Chocola", 21.99, True]
+             ["1239","Chocola", 21.99, False]
 
              ]
 
