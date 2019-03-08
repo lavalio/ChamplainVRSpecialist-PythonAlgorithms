@@ -33,6 +33,9 @@ def is_punctuation(s):
             return True
         return False
 
+def character():
+    list = []
+
 
 
 
