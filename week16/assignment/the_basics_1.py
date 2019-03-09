@@ -14,7 +14,7 @@ def odd_even_number(num):
         return "This is an even number"
     return "This is an odd number"
 
-def max_number(a_list):
+def find_max_number(a_list):
     max_value = 0
     for c in a_list:
         if is_number(c):
@@ -22,19 +22,16 @@ def max_number(a_list):
                 max_value = c
     return max_value
 
-def decide_max(c,max):
+def is_max_number(c,max):
     if int(c) < max:
         return "This is not the highest number in the list"
-    return "This is the highest number  in the list"
+    return "This is the highest number in the list"
 
 def is_punctuation(s):
     for item in string.punctuation:
         if s == item:
             return True
         return False
-
-def character():
-    list = []
 
 
 
