@@ -38,7 +38,7 @@ class Shapes:
 
    shape_list = []
 
-   def add_shape(self, shape: Shape):
+   def add(self, shape: Shape):
        self.shape_list.append(shape)
 
    def clear(self):

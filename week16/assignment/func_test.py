@@ -7,6 +7,10 @@ class FunctionsTestCase(unittest.TestCase):
         is_a_number = is_number(6)
         self.assertTrue(is_a_number)
 
+    def test_is_number(self):
+        is_a_number = is_number(6)
+        self.assertFalse(is_a_number)
+
     def test_even_number(self):
         even_number = odd_even_number(6)
         self.assertEqual(even_number,"This is an even number")
@@ -14,6 +18,10 @@ class FunctionsTestCase(unittest.TestCase):
     def test_odd_number(self):
         odd_number = odd_even_number(3)
         self.assertEqual(odd_number,"This is an odd number")
+
+    def test_odd_number(self):
+        odd_number = odd_even_number(3)
+        self.assertEqual(odd_number,"This is an even number")
 
     def test_is_not_max_number(self):
         not_max = is_max_number(6,26)
