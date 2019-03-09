@@ -15,11 +15,17 @@ class ClassTestCase(unittest.TestCase):
         area = square.get_area()
         self.assertEqual(area,9)
 
-    def test_circle(self):
+    def test_circle_area(self):
         circle = Circle("Red",3)
         area = circle.get_area()
         expected_area = pi * (3 ** 2)
         self.assertEqual(area,expected_area)
+
+    def test_circle_circumference(self):
+        circle = Circle("Red",3)
+        circumference = circle.get_circumference()
+        expected_circumference = 2 * pi * 3
+        self.assertEqual(circumference,expected_circumference)
 
     def test_shapes_add(self):
         circle = Circle("Red", 3)
