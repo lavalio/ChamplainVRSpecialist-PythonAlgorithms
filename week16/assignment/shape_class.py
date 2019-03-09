@@ -1,46 +1,51 @@
 from math import pi
-shape_list = []
 
 class Shape:
-   color = ""
-
-   def add_shape(self, shape: Shape):
-       shape_list.append(shape)
+   def __init__(self, color):
+       self._color = color
 
 class Rectangle(Shape):
-   len = 0
-   height = 0
-   # constructor
-   def __init__(self, c, h, l):
-       self.height = h
-       self.len = l
-       self.color = c
+   def __init__(self, color, height, width):
+       self._height = height
+       self._width = width
+       super().__init__(color)
 
    def get_area(self):
-       return self.len * self.height
+       return self._width * self._height
 
-   def get_perimeter(self):
-       return 2*(self.len + self.height)
+   def get_width(self):
+       return self._width
 
-class Square(Shape):
-   len = 0
-   def __init__(self, c, l):
-       self.len = l
-       self.color = c
-   def get_area(self):
-       return self.len ** 2
-   def get_perimeter(self):
-       return self.len*4
+   def get_height(self):
+       return self._height
+
+class Square(Rectangle):
+   def __init__(self, color, width):
+       super().__init__(color,width,width)
 
 class Circle(Shape):
-   radius = 0
-   # constructor
-   def __init__(self, c, r):
-       self.radius = r
-       self.color = c
+   def __init__(self, color, radius):
+       self.__radius = radius
+       super().__init__(color)
 
    def get_area(self):
-       return pi * (self.radius ** 2)
-   def get_circumference(self):
-       return 2 * pi * self.radius
+       return pi * (self.__radius ** 2)
 
+   def get_circumference(self):
+       return 2 * pi * self.__radius
+
+class Shapes:
+
+   shape_list = []
+
+   def add_shape(self, shape: Shape):
+       self.shape_list.append(shape)
+
+   def clear(self):
+       self.shape_list.clear()
+
+   def get_total_area(self):
+       total_area = 0
+       for shape in self.shape_list:
+           total_area += shape.get_area()
+       return  total_area
